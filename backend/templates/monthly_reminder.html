@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Monthly Reminder</title>
+    </head>
+    <body>
+        <h1>Monthly Reminder</h1>
+        <p>Dear {{ user.username }},</p>
+        <p>
+            This is a monthly reminder, along with other important analytic
+            information about the books you are currently reading.
+        </p>
+        {% if books %}
+        <h2>Summary of Books Issued</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Books</th>
+                    <th>Number of times issued</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book, count in books.items() %}
+                <tr>
+                    <td>{{ book }}</td>
+                    <td>{{ count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2>Summary of Sections you have read</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sections</th>
+                    <th>Number of books</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for section, count in sections.items() %}
+                <tr>
+                    <td>{{ section }}</td>
+                    <td>{{ count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>
+            You have currently not issued any books. Feel free to explore the
+            LMS and find any books that interest you.
+        </p>
+        {% endif %}
+        <p>
+            If you have any problems with the books you have issued, feel free
+            to write a review about it. For any further queries regarding any
+            books, please do not hesitate to contact me.
+        </p>
+        <p>Regards,</p>
+        <p>Librarian</p>
+    </body>
+</html>

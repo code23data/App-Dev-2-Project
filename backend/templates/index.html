@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% raw %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flask & Vue App</title>
+        <!-- Import Vue & Vue Router -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/vue-router@4"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body style="background-color: #f2f2f2">
+        <!-- Create Vue App -->
+        <div id="app">
+            <header></header>
+            <home></home>
+            <!-- Use Vue Router to display the correct component based on the URL -->
+            <!-- <router-view></router-view> -->
+        </div>
+
+        <!-- Import Vuex -->
+        <script src="https://unpkg.com/vuex@4"></script>
+    </body>
+    <!-- Import your Vue components -->
+    <script src="/static/js/index.js"></script>
+    {% endraw %}
+</html>
